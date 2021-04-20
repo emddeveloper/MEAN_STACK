@@ -1,0 +1,35 @@
+<mat-card>
+  <h1>Post comment App</h1>
+  <form [formGroup]="postForms" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter title here." formControlName="title" />
+      <mat-error *ngIf="postForms.get('title').hasError('required')">
+        Title is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea
+        matInput
+        placeholder="Enter your post here."
+        formControlName="content"
+      ></textarea>
+      <mat-error *ngIf="postForms.get('content').hasError('required')">
+        Content is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="postForms.get('content').hasError('minlength')">
+        Minlength is
+        <strong>{{ postForms.errors.minlength }}</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      mat-flat-button
+      color="primary"
+      type="submit"
+      [disabled]="postForms.invalid"
+    >
+      Post
+    </button>
+  </form>
+  <br />
+</mat-card>

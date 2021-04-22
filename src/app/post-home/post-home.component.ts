@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { post } from '../post.model';
+import { PostService } from '../post.service';
 @Component({
   selector: 'app-post-home',
   templateUrl: './post-home.component.html',
@@ -12,11 +13,12 @@ export class PostHomeComponent implements OnInit {
     title: new FormControl('', [Validators.required]),
     content: new FormControl('', [Validators.required]),
   });
-  constructor() {}
+  constructor(private PostService: PostService) {}
 
   ngOnInit(): void {}
   onSubmit() {
-    this.post_emit.emit(this.postForms.value);
+    this.PostService.sendPost(this.postForms.value).subscribe((response) => {
+      console.log(response.posts);
+    });
   }
-  sendPost() {}
 }

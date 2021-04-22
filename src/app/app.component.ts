@@ -5,9 +5,4 @@ import { post } from './post.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  storedPost: post[] = [];
-  on_post_emit(value: post) {
-    this.storedPost.push(value);
-  }
-}
+export class AppComponent {}

@@ -18,7 +18,7 @@ export class PostHomeComponent implements OnInit {
   ngOnInit(): void {}
   onSubmit() {
     this.PostService.sendPost(this.postForms.value).subscribe((response) => {
-      console.log(response.posts);
+      console.log(response);
     });
   }
 }

@@ -14,12 +14,17 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { PostListComponent } from './post-list/post-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './auth/login/login.component';
+import { AppRoutingModule } from './app.routing.module';
+import { SignupComponent } from './auth/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
     PostHomeComponent,
     HeaderComponent,
     PostListComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatExpansionModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

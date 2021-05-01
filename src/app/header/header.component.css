@@ -1,0 +1,16 @@
+ul {
+  display: inline-flex;
+  list-style: none;
+  color: #fff;
+}
+li {
+  margin-right: 20px;
+  color: #fff;
+}
+li > a {
+  color: #fff;
+  text-decoration: none;
+}
+li > a.active {
+  color: #ff5e79ed;
+}

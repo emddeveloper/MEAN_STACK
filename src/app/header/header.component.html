@@ -1,1 +1,31 @@
-<mat-toolbar color="primary">Header</mat-toolbar>
+<mat-toolbar color="primary"
+  >Header
+  <nav>
+    <ul>
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/login"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Login</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/signup"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Signup</a
+        >
+      </li>
+    </ul>
+  </nav>
+</mat-toolbar>

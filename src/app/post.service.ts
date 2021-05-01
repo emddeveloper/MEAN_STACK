@@ -7,14 +7,15 @@ import { post } from './post.model';
 export class PostService {
   constructor(private http: HttpClient) {}
   getPosts() {
-    return this.http.get<{ message: string; posts: post[] }>(
+    return this.http.get<{ message: string; posts: any }>(
       'http://localhost:3000/api/posts'
     );
   }
   sendPost(request: post) {
-    return this.http.post<{ message: string; posts: post[] }>(
-      'http://localhost:3000/api/posts',
-      request
-    );
+    return this.http.post('http://localhost:3000/api/posts', request);
+  }
+  //delete post
+  delete(id: number) {
+    return this.http.delete('http://localhost:3000/api/posts/' + id);
   }
 }
